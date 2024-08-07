@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+nav{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+}
+nav>ul{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 1px solid white;
+
+}
+nav>ul>li{
+    /* border: 1px solid white; */
+    padding: 3px 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px white;
+}
