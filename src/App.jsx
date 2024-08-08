@@ -9,6 +9,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Allusers from "./components/Allusers";
+import EditUser from "./components/EditUser";
 
 const App = () => {
   let routes = createBrowserRouter([
@@ -40,6 +41,10 @@ const App = () => {
           path: "/allusers",
           element: <Allusers />,
         },
+        {
+          path:"/edituser/:userID",
+          element:<EditUser/>
+        }
       ],
     },
   ]);

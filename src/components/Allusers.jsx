@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Allusers = () => {
   let [users, setUsers] = useState(null);
@@ -44,7 +44,7 @@ const Allusers = () => {
               <h1>Name {username}</h1>
               <p>Email {email}</p>
               <div>
-                <button>edit</button>
+                <Link to={`/edituser/${id}`}><button>edit</button></Link>
                 <button onClick={() => deleteUser(id)}>delete</button>
               </div>
             </article>
