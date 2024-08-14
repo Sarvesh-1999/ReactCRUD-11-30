@@ -76,41 +76,61 @@
 
 // export default App;
 
-// ! REDUX-TOOLKIT EXAMPLE
+// // ! REDUX-TOOLKIT EXAMPLE
+// import React from "react";
+// import { configureStore, createSlice } from "@reduxjs/toolkit";
+// import { Provider } from "react-redux";
+// import Counter from "./reduxExample/Counter";
+
+// // ! CREATING A SLICE ===> FEATURES
+// const counterSlice = createSlice({
+//   name: "counter",
+//   initialState: { count: 5 },
+//   reducers: {
+//     increment: (state, action) => {
+//       console.log(action);
+//       state.count += 1;
+//     },
+//     decrement: (state, action) => {
+//       console.log(action);
+//       state.count -= 1;
+//     },
+//   },
+// });
+// export let { increment, decrement } = counterSlice.actions;
+
+// // ! CREATING A STORE
+// let myStore = configureStore({
+//   reducer: {
+//     counter: counterSlice.reducer,
+//   },
+// });
+
+// const App = () => {
+//   return (
+//     <Provider store={myStore}>
+//       <Counter />
+//     </Provider>
+//   );
+// };
+
+// export default App;
+
 import React from "react";
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import CreateTodo from "./todo/CreateTodo";
+import Todos from "./todo/Todos";
+import "./global.css";
 import { Provider } from "react-redux";
-import Counter from "./reduxExample/Counter";
-
-// ! CREATING A SLICE ===> FEATURES
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: { count: 5 },
-  reducers: {
-    increment: (state, action) => {
-      console.log(action);
-      state.count += 1;
-    },
-    decrement: (state, action) => {
-      console.log(action);
-      state.count -= 1;
-    },
-  },
-});
-export let { increment, decrement } = counterSlice.actions;
-
-// ! CREATING A STORE
-let myStore = configureStore({
-  reducer: {
-    counter: counterSlice.reducer,
-  },
-});
-
+import { myStore } from "./todo/todoRedux/store";
 const App = () => {
   return (
-    <Provider store={myStore}>
-      <Counter />
-    </Provider>
+    <main>
+      <h1 id="heading">Todo</h1>
+      <Provider store={myStore}>
+        <CreateTodo />
+        <Todos />
+      </Provider>
+    </main>
   );
 };
 
